@@ -14,7 +14,7 @@ describe ('app', function(){
       .end(function(err, res){
         expect(err).to.be.null
         expect(res.body.hour).to.at.most(23);
-        expect(res.body.minute).to.eql(new Date().getMinutes())
+        expect(res.body.minute).to.be.closeTo(new Date().getMinutes(), 1)
         done();
       });
     });
